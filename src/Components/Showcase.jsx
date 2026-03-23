@@ -1,12 +1,13 @@
 import  React, { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive'
 import gsap from 'gsap'
+import { useGSAP } from '@gsap/react';
 
 const Showcase = () => {
 
-    const isTablet = useMediaQuery({query: '(max-width: 1024)'})
+    const isTablet = useMediaQuery({query: '(max-width: 1024px)'})
 
-    React.useEffect(() => {
+    useGSAP(() => {
         if (!isTablet) {
             const timeline = gsap.timeline({
                 scrollTrigger: {
@@ -14,7 +15,7 @@ const Showcase = () => {
                     start: 'top top',
                     end: 'bottom top',
                     scrub: true,
-                    pin: true
+                    pin: true,
                 }
             });
 
@@ -61,7 +62,7 @@ const Showcase = () => {
 <div className="space-y-2">
     <p>Up to </p>
     <h3>1.5x faster</h3>
-    <p>CPU rendering performance than M2</p>
+    <p>CPU performance than M2</p>
 </div>
                 </div>
             </div>
