@@ -12,8 +12,13 @@ const useMacbookStore = create((set)=>({
     // Function to change scale
     setScale: (scale) => set({ scale }),
 
+
+// Modifying the texture of the Macbook in the Features component
+    texture: '/videos/feature-1.mp4',
+    setTexture: (texture) => set({ texture }),
+
     // Resets everything back to default
-    reset:()=> set({ color: '#2e2c2e', scale:0.08 }),
+    reset:()=> set({ color: '#2e2c2e', scale:0.08, texture: '/videos/feature-1.mp4' }),
 }))
 
 export default useMacbookStore;
