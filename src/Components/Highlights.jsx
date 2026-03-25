@@ -2,10 +2,12 @@ import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 import gsap from 'gsap';
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from 'gsap/all';
+
 
 const Highlights = () => {
 const isMobile = useMediaQuery({ query: '(max-width: 1024px)' })
+
+// Masonry layout abode the footer of features
 
 useGSAP(() => {
 gsap.to(['.left-column', '.right-column'], {

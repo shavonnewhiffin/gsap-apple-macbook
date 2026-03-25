@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
 import { PresentationControls } from "@react-three/drei";
-import { useRef } from "react";
 import MacbookModel16 from "../Models/Macbook-16";
 import MacbookModel14 from "../Models/Macbook-14";
 import gsap from "gsap";
@@ -9,7 +8,7 @@ import { useGSAP } from "@gsap/react"
 const ANIMATION_DURATION = 1;
 const OFFSET_DISTANCE = 5;
 
-// Fade in and out
+// Fade in and out via opacity during model transition
 const fadeMeshes = (group, opacity) => {
   if (!group) return;
 
@@ -21,7 +20,7 @@ const fadeMeshes = (group, opacity) => {
   });
 };
 
-// Animates x position of the model
+// Animates left and right slide - x position of the model
 const moveGroup = (group, x) => {
   if (!group) return;
 
@@ -52,7 +51,7 @@ const ModelSwitcher = ({ scale, isMobile }) => {
     }
   }, [scale]);
 
-  // Presentation Controls. Object snaps back to position after user moves it. Polar limits vertical rotation. Azimuth lets you slide horizontally by as much as you want.
+  // Presentation Controls. Object snaps back to position after user moves it. Note: Polar limits vertical rotation. Azimuth lets you slide horizontally by as much as you want.
 
   const controlsConfig = {
     snap: true,

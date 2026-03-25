@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 import { performanceImages, performanceImgPositions } from "../constants/index.js";
 import {useMediaQuery} from "react-responsive";
 
+// Multiple screens transition off screen to reveal a Macbook Pro, center
+
 const Performance = () => {
     const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
     const sectionRef = useRef(null);

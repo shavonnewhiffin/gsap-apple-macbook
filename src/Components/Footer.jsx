@@ -1,5 +1,4 @@
 import React from 'react'
-import { label } from 'three/tsl'
 import { footerLinks } from '../Constants'
 
 const Footer = () => {
@@ -7,9 +6,9 @@ const Footer = () => {
     <footer>
         <div className="info">
             <p>
-                More ways to shop: Find an Apple Store or other retailer near you. Or call 000800 040 1965
+                More ways to shop: Find an Apple Store or other retailer near you. Or call 000800 040 1965.
             </p>
-            <img src="/logo.svg" alt="Apple logo" />
+            <img src="/logo.svg" alt="Apple logo" className="hidden sm:block"/>
         </div>
         <hr />
         <div className="links">

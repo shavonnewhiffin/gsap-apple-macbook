@@ -1,19 +1,19 @@
-import React from "react";
+import React, { Suspense, useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import StudioLights from "./three/StudioLights";
 import { features, featureSequence } from "../Constants/index";
 import clsx from "clsx";
-import { Suspense, useRef } from "react";
 import MacbookModel from "./Models/Macbook";
 import useMacbookStore from "../Store";
 import { Html } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
-import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Page with rotating Macbook down the screen amongst video
 
 const ModelScroll = () => {
     const groupRef = useRef(null)
@@ -86,7 +86,7 @@ const ModelScroll = () => {
     return (
         <group ref={groupRef}>
             <Suspense fallback=
-            {<Html><h1 className="text-white text-3xl uppercase">Loading ...</h1></Html>}>
+            {<Html><h1 className="text-white text-3xl uppercase">.</h1></Html>}>
                 <MacbookModel scale={isMobile? 0.05 : 0.08} position={[0, -1, 0]}/>
             </Suspense>
         </group>
