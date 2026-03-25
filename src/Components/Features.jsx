@@ -1,7 +1,7 @@
 import React, { Suspense, useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import StudioLights from "./three/StudioLights";
-import { features, featureSequence } from "../Constants/index";
+import { features, featureSequence } from "../Constants/Index";
 import clsx from "clsx";
 import MacbookModel from "./Models/Macbook";
 import useMacbookStore from "../Store";
