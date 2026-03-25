@@ -13,7 +13,7 @@ import { useGLTF, useVideoTexture } from '@react-three/drei'
 import { useTexture } from '@react-three/drei'
 import useMacbookStore from '../../Store/index'
 import { Color } from 'three'
-import { noChangeParts } from '../../Constants'
+import { noChangeParts } from '../../Constants/index'
 
 export default function MacbookModel(props) {
   const { color, texture, } = useMacbookStore();
