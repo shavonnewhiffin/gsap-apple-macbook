@@ -4,7 +4,9 @@ import gsap from 'gsap'
 
 const Showcase = () => {
 
-    const isTablet = useMediaQuery({query: '(max-width: 1024)'})
+    // Component with MP4 chip, Assassin's Creed playing in background
+
+    const isTablet = useMediaQuery({query: '(max-width: 1024px)'})
 
     React.useEffect(() => {
         if (!isTablet) {
@@ -19,9 +21,9 @@ const Showcase = () => {
             });
 
             timeline
-                .to('.mask img', {
-                    transform: 'scale(1.1)'
-                })
+            .to('.mask img', {
+                scale: isTablet ? 1.03 : 1.1
+              })
                 .to('.content', { opacity: 1, y: 0, ease: 'power1.in' });
         }
 }, [isTablet]);
@@ -36,7 +38,7 @@ const Showcase = () => {
         </div>
 
         <div className="content">
-            <div className="wrapper">
+            <div className="wrapper md:ml-10 lg:ml-0">
                 <div className="lg:max-w-md">
                     <h2>Rocket Chip</h2>
                     <div className="space-y-5 mt-7 pe-10">
@@ -53,14 +55,14 @@ const Showcase = () => {
                     </div> 
                 </div>
                 <div className="max-w-3xs space-y-14">
-<div className="space-y-2">
+<div className="space-y-2 ">
     <p>Up to </p>
-    <h3>4x faster</h3>
+    <h3 className="md:text-3xl">4x faster</h3>
     <p>pro rendering performance than M2</p>
 </div>
 <div className="space-y-2">
     <p>Up to </p>
-    <h3>1.5x faster</h3>
+    <h3 className="md:text-3xl">1.5x faster</h3>
     <p>CPU rendering performance than M2</p>
 </div>
                 </div>

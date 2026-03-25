@@ -3,16 +3,18 @@ import React from "react";
 import useMacbookStore from "../Store"
 import clsx from "clsx";
 import { Canvas } from "@react-three/fiber";
-import MacbookModel14 from "./Models/Macbook-14";
 import StudioLights from "./three/StudioLights";
 import ModelSwitcher from "./three/ModelSwitcher";
 import { useMediaQuery } from "react-responsive";
 
 const ProductViewer = () => {
 
+// Component where viewer can rotate different models and colors 3d
+
   // Destructuring what we are getting from the Store 
   const {color, scale, setColor, setScale} = useMacbookStore();
 
+//   isMobile captures the breakpoints for BOTH mobile and tablet
  const isMobile = useMediaQuery({ query: '(max-width: 1024px)'})
 
  const colorName = color === "#adb5bd"? 'Silver' : 'Space Black';
